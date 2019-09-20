@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>.Gif Search</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <a class="navbar-brand" href="/">.Gif</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/trending">Trending <i class="fas fa-star"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/entertainment">Entertainment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sports">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/coding">Coding Syndrome</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Header Content -->
+    <div class="header-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <form class="gif-search justify-content-center" action="/search" method="GET">
+                        <input class="search-input" name="gifs" type="text" placeholder="Search for a GIF..." aria-label="Search">
+                        <button type="submit" class="search-icon"><i class="fas fa-search"></i></button>
+                    </form>
+                    {% if search_term %}
+                    <h1 class="response-text">
+                        <span>Category</span>
+                        {{search_term}}
+                    </h1>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gif Contents -->
+    <div class="gif-container">
+        <div class="container-fluid">
+            <div class="row">
+
+                {% block index %}
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer Contents -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 site-footer text-center">
+                    <span>&copy 2019 Gif Search</span>
+                    <p>Built by: Andre Williams & Alex Barksdale</p>
+                </div>
+                <div class="col-md-12 media-links text-center">
+                    <a href="https://www.linkedin.com/in/andrewilliams22/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Andre-Williams22" target="_blank">
+                        <i class="fab fa-github-square divider"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/alexbarksdale/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/alexbarksdale" target="_blank">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include the Tenor JavaScript to fill in GIFs appropriately -->
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8cba328980.js"></script>
+</body>
+
+</html>
