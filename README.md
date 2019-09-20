@@ -7,8 +7,8 @@ This Gif search project displays randomized gifs from tenors API on the home pag
 
 ## Authors
 
-* **Andre Williams and Alex Barksdale** - [Alex's GitHub](https://github.com/alexbarksdale)
-* Check Alex's branch for most of his work and master branch
+* **Alex Barksdale and Andre Williams** - [Andre's GitHub](https://github.com/Andre-Williams22)
+* Check out his [repo](https://github.com/Andre-Williams22/gif-search) for our commits.
 
 ## Getting Started
 
