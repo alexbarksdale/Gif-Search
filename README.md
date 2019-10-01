@@ -29,7 +29,7 @@ pip3 install requests
 
 1. Clone the respository
 ```
-git clone https://github.com/Andre-Williams22/gif-search.git
+git clone https://github.com/alexbarksdale/Gif-Search.git
 ```
 2. Make sure you're in the correct directory
 
